@@ -1,8 +1,6 @@
 # Super-Heróis 
 
-Pacotes
-## NodeJS e npm
-
+Pacotes: NodeJS e npm
 
 Instalar projeto:
 ```shell
