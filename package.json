@@ -5,14 +5,14 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "node node_modules/nodemon/bin/nodemon bin/server",
+        "dev": "node node_modules/nodemon/bin/nodemon src/app",
         "start": "node src/app.js"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/rodrigorosa1/super-herois-node-express.git"
     },
-    "author": "Rodrigo",
+    "author": "André",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/rodrigorosa1/super-herois-node-express/issues"

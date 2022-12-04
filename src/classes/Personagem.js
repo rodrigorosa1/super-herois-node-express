@@ -1,8 +1,14 @@
+const { AbstractRepository } = require('typeorm');
 const CollectionClass = require('./collections');
-
 const collection = CollectionClass.geral();
 
-class Metodos {
+
+class Personagem {
+    constructor(){
+        console.log('começou')
+    }
+
+
     randomAtaque(max) {
         return Math.floor(Math.random() * max);
     }
@@ -34,8 +40,6 @@ class Metodos {
             module.exports.recuperar(personagem_c)
         }
 
-        return true;
-
     }
 
     recuperar(personagem) {
@@ -55,7 +59,7 @@ class Metodos {
         Object.keys(oponente.poderes).forEach(key => {
             personagem.poderes.push(oponente.poderes[key]);
         });
-        console.log(oponente.nome + ' teve seus poderes por ' + personagem.nome)
+        console.log(oponente.nome + ' teve seus poderes clonado por ' + personagem.nome)
     }
 
     removerClone(personagem) {
@@ -64,18 +68,24 @@ class Metodos {
     }
 
 
-    adicionarPoder(poder, personagem) {
-
+    adicionarPoder(poder, personagem_nome) {
+        const personagem_c = collection.find(personagem => personagem.nome === personagem_nome);
+        personagem_c.poderes.push(poder);
     }
 
-    removerPoder(poder, personagem) {
-
+    removerPoder(poder_nome, personagem_nome) {
+        const personagem_c = collection.find(personagem => personagem.nome === personagem_nome);
+        personagem_c.poderes.poder = null;
     }
 
-    getPoderes(personagem) {
-
+    getPoder(personagem_nome) {
+        const personagem_c = collection.find(personagem => personagem.nome === personagem_nome);
+        return personagem_c;
     }
 
+    getPersonagens() {
+        return collection;
+    }
 }
 
-module.exports = new Metodos();
+module.exports = new Personagem();
